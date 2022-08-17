@@ -25,7 +25,7 @@ You can then create a Project using XSOAR CLI.
 !tableau-create-project project_name="XSOAR Insights"
 ```
 
-The `Tableau Weekly Incident Data Sync` data can then be run to publish incident data for the last 7 days.
+The `Tableau Weekly Incident Data Sync` playbook can then be run to publish incident data for the last 7 days.
 This can be modified as needed.
 
 

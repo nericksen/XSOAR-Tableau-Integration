@@ -1,0 +1,131 @@
+id: 36b32d10-1295-4945-8801-ac86d29d0bc4
+version: 5
+vcShouldKeepItemLegacyProdMachine: false
+name: Tableau Weekly Incident Data Sync
+starttaskid: "0"
+tasks:
+  "0":
+    id: "0"
+    taskid: 3b7c2967-0622-4323-8d2a-48466b402de6
+    type: start
+    task:
+      id: 3b7c2967-0622-4323-8d2a-48466b402de6
+      version: -1
+      name: ""
+      iscommand: false
+      brand: ""
+    nexttasks:
+      '#none#':
+      - "1"
+    separatecontext: false
+    view: |-
+      {
+        "position": {
+          "x": 450,
+          "y": 50
+        }
+      }
+    note: false
+    timertriggers: []
+    ignoreworker: false
+    skipunavailable: false
+    quietmode: 0
+    isoversize: false
+    isautoswitchedtoquietmode: false
+  "1":
+    id: "1"
+    taskid: 50841a0a-01aa-4a9a-81df-cbd7eacdf9b9
+    type: regular
+    task:
+      id: 50841a0a-01aa-4a9a-81df-cbd7eacdf9b9
+      version: -1
+      name: Find Incidents for Past Week
+      description: |-
+        Gets a list of incident objects and the associated incident outputs that
+        match the specified query and filters. The results are returned in a structured data file.
+
+        This automation runs using the default Limited User role, unless you explicitly change the permissions.
+        For more information, see the section about permissions here:
+        https://docs.paloaltonetworks.com/cortex/cortex-xsoar/6-5/cortex-xsoar-admin/playbooks/automations.html
+      scriptName: GetIncidentsByQuery
+      type: regular
+      iscommand: false
+      brand: ""
+    nexttasks:
+      '#none#':
+      - "2"
+    scriptarguments:
+      extend-context:
+        simple: FoundIncidents=.=JSON.parse(val)
+      fromDate:
+        simple: 7 days ago
+      limit:
+        simple: "200"
+      outputFormat:
+        simple: json
+      populateFields:
+        simple: name,id,type,status,severity,owner
+    separatecontext: false
+    view: |-
+      {
+        "position": {
+          "x": 450,
+          "y": 200
+        }
+      }
+    note: false
+    timertriggers: []
+    ignoreworker: false
+    skipunavailable: false
+    quietmode: 0
+    isoversize: false
+    isautoswitchedtoquietmode: false
+  "2":
+    id: "2"
+    taskid: 1f42986c-a919-4251-87bc-d094d21d2e52
+    type: regular
+    task:
+      id: 1f42986c-a919-4251-87bc-d094d21d2e52
+      version: -1
+      name: Create Table Hyper File and Publish
+      description: Upload CSV data to a workbook for a given project
+      script: Tableau|||tableau-upload-and-publish-csv
+      type: regular
+      iscommand: true
+      brand: Tableau
+    scriptarguments:
+      data:
+        simple: ${FoundIncidents}
+      hyper_name:
+        simple: xsoar_weekly_incident_snapshot.hyper
+      project_name:
+        simple: XSOAR Insights
+    separatecontext: false
+    view: |-
+      {
+        "position": {
+          "x": 450,
+          "y": 370
+        }
+      }
+    note: false
+    timertriggers: []
+    ignoreworker: false
+    skipunavailable: false
+    quietmode: 0
+    isoversize: false
+    isautoswitchedtoquietmode: false
+view: |-
+  {
+    "linkLabelsPosition": {},
+    "paper": {
+      "dimensions": {
+        "height": 415,
+        "width": 380,
+        "x": 450,
+        "y": 50
+      }
+    }
+  }
+inputs: []
+outputs: []

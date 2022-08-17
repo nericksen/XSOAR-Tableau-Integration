@@ -1,0 +1,305 @@
+commonfields:
+  id: Tableau
+  version: -1
+vcShouldKeepItemLegacyProdMachine: false
+name: Tableau
+display: Tableau
+category: Utilities
+image: data:image/png;base64,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
+description: Tableau integration for sending XSOAR incident data, modifying workbooks,
+  etc.
+detaileddescription: |-
+  ## Tableau Integration
+
+  The "token_name" and "token_value" should be the personal access token (PAT) generated from Tableau and set to not expire.
+
+  Note: Test module currently doesn't work.
+configuration:
+- display: Trust any certificate (not secure)
+  name: insecure
+  type: 8
+  required: false
+- display: Use system proxy settings
+  name: proxy
+  type: 8
+  required: false
+- display: ""
+  name: server_address
+  type: 0
+  required: false
+- display: ""
+  name: site_name
+  type: 0
+  required: false
+- display: ""
+  name: token_name
+  type: 0
+  required: false
+- display: ""
+  name: token_value
+  type: 4
+  required: false
+script:
+  script: |
+    register_module_line('HelloWorld', 'start', __line__())
+
+    import requests
+
+    import json
+    import urllib3
+    import dateparser
+    import traceback
+    from typing import Any, Dict, Tuple, List, Optional, Union, cast
+
+    from datetime import datetime
+
+
+    """Tableau Imports"""
+    from pathlib import Path
+    import tableauserverclient as TSC
+    from tableauhyperapi import HyperProcess, Telemetry, \
+        Connection, CreateMode, \
+        NOT_NULLABLE, NULLABLE, SqlType, TableDefinition, \
+        Inserter, \
+        escape_name, escape_string_literal, \
+        TableName, \
+        HyperException
+
+
+    dParams = demisto.params()
+    server_address = dParams.get("server_address")
+    site_name = dParams.get("site_name")
+    token_name = dParams.get("token_name")
+    token_value = dParams.get("token_value")
+
+
+    def insert_data(path_to_database, data):
+        """
+        An example demonstrating a simple single-table Hyper file including table creation and data insertion with different types
+        This code is lifted from the below example:
+        https://github.com/tableau/hyper-api-samples/blob/main/Tableau-Supported/Python/insert_data_into_single_table.py
+        """
+        demisto.results("Creating single table for publishing.")
+        # The table is called "Extract" and will be created in the "Extract" schema
+        # and contains four columns.
+        extract_table = TableDefinition(
+            table_name=TableName("Extract", "Extract"),
+            columns=[
+                TableDefinition.Column(name='Incident ID', type=SqlType.text(), nullability=NOT_NULLABLE),
+                TableDefinition.Column(name='Incident Name', type=SqlType.text(), nullability=NOT_NULLABLE),
+                TableDefinition.Column(name='Type', type=SqlType.text(), nullability=NOT_NULLABLE),
+                TableDefinition.Column(name='Status', type=SqlType.big_int(), nullability=NOT_NULLABLE),
+                TableDefinition.Column(name='Severity', type=SqlType.big_int(), nullability=NOT_NULLABLE),
+                TableDefinition.Column(name='Owner', type=SqlType.text(), nullability=NOT_NULLABLE)
+            ]
+        )
+        # Starts the Hyper Process with telemetry enabled to send data to Tableau.
+        # To opt out, simply set telemetry=Telemetry.DO_NOT_SEND_USAGE_DATA_TO_TABLEAU.
+        with HyperProcess(telemetry=Telemetry.SEND_USAGE_DATA_TO_TABLEAU) as hyper:
+
+            # Creates new Hyper file "customer.hyper".
+            # Replaces file with CreateMode.CREATE_AND_REPLACE if it already exists.
+            with Connection(endpoint=hyper.endpoint,
+                            database=path_to_database,
+                            create_mode=CreateMode.CREATE_AND_REPLACE) as connection:
+
+                connection.catalog.create_schema(schema=extract_table.table_name.schema_name)
+                connection.catalog.create_table(table_definition=extract_table)
+
+                # The rows to insert into the "Extract"."Extract" table.
+                data_to_insert = [[d["id"], d["name"], d["type"], d["status"], d["severity"], d["owner"]] for d in data]
+
+                with Inserter(connection, extract_table) as inserter:
+                    inserter.add_rows(rows=data_to_insert)
+                    inserter.execute()
+
+                # The table names in the "Extract" schema (the default schema).
+                table_names = connection.catalog.get_table_names("Extract")
+                demisto.results(f"Tables available in {path_to_database} are: {table_names}")
+
+                # Number of rows in the "Extract"."Extract" table.
+                # `execute_scalar_query` is for executing a query that returns exactly one row with one column.
+                row_count = connection.execute_scalar_query(query=f"SELECT COUNT(*) FROM {extract_table.table_name}")
+                demisto.results(f"The number of rows in table {extract_table.table_name} is {row_count}.")
+
+            demisto.results("The connection to the Hyper file has been closed.")
+        demisto.results("The Hyper process has been shut down.")
+        return "Ok"
+
+
+    def publish_hyper(path_to_database, project_name, token_name, token_value, site_name, server_address):
+        """
+        Shows how to leverage the Tableau Server Client (TSC) to sign in and publish an extract directly to Tableau Online/Server
+        """
+
+        # Sign in to server
+        tableau_auth = TSC.PersonalAccessTokenAuth(token_name=token_name, personal_access_token=token_value, site_id=site_name)
+        server = TSC.Server(server_address, use_server_version=True)
+        demisto.results(server)
+        server.add_http_options({"verify": False})
+        demisto.results(f"Signing into {site_name} at {server_address}")
+        with server.auth.sign_in(tableau_auth):
+            # Define publish mode - Overwrite, Append, or CreateNew
+            publish_mode = TSC.Server.PublishMode.Overwrite
+            demisto.results("in")
+            # Get project_id from project_name
+            all_projects, pagination_item = server.projects.get()
+            for project in TSC.Pager(server.projects):
+                if project.name == project_name:
+                    project_id = project.id
+
+            # Create the datasource object with the project_id
+            datasource = TSC.DatasourceItem(project_id)
+
+            #demisto.results(f"Publishing {hyper_name} to {project_name}...")
+            # Publish datasource
+            datasource = server.datasources.publish(datasource, path_to_database, publish_mode)
+            demisto.results("Datasource published. Datasource ID: {0}".format(datasource.id))
+
+
+
+    def auth_to_tableau():
+        tableau_auth = TSC.PersonalAccessTokenAuth(token_name=token_name, personal_access_token=token_value, site_id=site_name)
+        server = TSC.Server(server_address, use_server_version=True)
+        #demisto.results(server)
+        server.add_http_options({"verify": False})
+        #demisto.results(f"Signing into {site_name} at {server_address}")
+        return tableau_auth, server
+
+    def list_projects():
+        tableau_auth, server = auth_to_tableau()
+        with server.auth.sign_in(tableau_auth):
+            # Define publish mode - Overwrite, Append, or CreateNew
+            publish_mode = TSC.Server.PublishMode.Overwrite
+            #demisto.results("in")
+            # Get project_id from project_name
+            all_projects, pagination_item = server.projects.get()
+            for project in TSC.Pager(server.projects):
+                demisto.results(str(project.name))
+
+    def create_project(project_name):
+        tableau_auth, server = auth_to_tableau()
+        with server.auth.sign_in(tableau_auth):
+            project = TSC.ProjectItem(name=project_name)
+            project_item = server.projects.create(project, samples=False)
+
+            demisto.results(f"Create new project: {project_item.name}")
+
+    # Disable insecure warnings
+    #urllib3.disable_warnings()
+
+    ''' CONSTANTS '''
+
+    DATE_FORMAT = '%Y-%m-%dT%H:%M:%SZ'
+    MAX_INCIDENTS_TO_FETCH = 50
+    HELLOWORLD_SEVERITIES = ['Low', 'Medium', 'High', 'Critical']
+
+
+    ''' COMMAND FUNCTIONS '''
+
+
+    def test_module():
+        try:
+            tableau_auth, server = auth_to_tableau()
+            return 'ok'
+        except:
+            return "error"
+
+
+
+
+    ''' MAIN FUNCTION '''
+
+
+    def main() -> None:
+
+
+
+        site_token = demisto.params().get('token_value')
+        verify_certificate = not demisto.params().get('insecure', False)
+
+
+        # if your Client class inherits from BaseClient, system proxy is handled
+        # out of the box by it, just pass ``proxy`` to the Client constructor
+        proxy = demisto.params().get('proxy', False)
+
+
+        demisto.debug(f'Command being called is {demisto.command()}')
+
+        try:
+
+            if demisto.command() == 'test-module':
+                # This is the call made when pressing the integration Test button.
+                result = test_module()
+                return_results(result)
+
+            elif demisto.command() == 'tableau-create-project':
+                project_name = demisto.args().get("project_name")
+                create_project(project_name)
+            elif demisto.command() == 'tableau-get-projects':
+
+                list_projects()
+
+            elif demisto.command() == 'tableau-publish-workbook':
+                # TODO modify to support passing parameters here and using the TSC library
+                body = {
+                    "workbook": {
+                        "name": "some workbook",
+                        "showTabs": True,
+                        "project": {
+                            "id": "3ac0afed-80c6-47fb-b706-3b10e417535d"
+                        }
+                    }
+
+                }
+                res = requests.post(f"{base_url}/sites/{SITE_ID}/workbooks", headers=headers, verify=False, json=body)
+                demisto.results(str(res.text))
+
+            elif demisto.command() == 'tableau-upload-and-publish-csv':
+                data = argToList(demisto.args().get("data"))
+
+                hyper_name = demisto.args().get("hyper_name", 'the_xsoar_weekly_incident_data.hyper')
+                project_name = demisto.args().get("project_name", 'XSOAR Insights')
+
+
+                path_to_database = Path(hyper_name)
+                insert_data(path_to_database, data)
+                publish_hyper(path_to_database, project_name, token_name, token_value, site_name, server_address)
+                demisto.results("Ok")
+
+
+        # Log exceptions and return errors
+        except Exception as e:
+            demisto.error(traceback.format_exc())  # print the traceback
+            return_error(f'Failed to execute {demisto.command()} command.\nError:\n{str(e)}')
+
+
+    ''' ENTRY POINT '''
+
+    if __name__ in ('__main__', '__builtin__', 'builtins'):
+        main()
+
+    register_module_line('HelloWorld', 'end', __line__())
+  type: python
+  commands:
+  - name: tableau-create-project
+    arguments:
+    - name: project_name
+      required: true
+      description: The project name to create
+    description: Create a new project
+  - name: tableau-get-projects
+    arguments: []
+    description: Get a list of projects
+  - name: tableau-upload-and-publish-csv
+    arguments:
+    - name: data
+      description: The list of JSON incident objects.
+      isArray: true
+    - name: hyper_name
+      description: The arbitrary name of the data source created in the project
+    - name: project_name
+    description: Upload CSV data to a workbook for a given project
+  dockerimage: tableau
+  runonce: false
+  subtype: python3

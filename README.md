@@ -1,4 +1,8 @@
-## Create Docker image
+# Tableau + XSOAR
+This integration and playbook demonstrates how to sync incident data between XSOAR and Tableau.
+
+
+### Create Docker image
 
 First create the custom docker image to run the Tableau client SDK.
 
@@ -6,7 +10,7 @@ First create the custom docker image to run the Tableau client SDK.
 /docker_image_create name=tableau base="demisto/python3-deb:3.8.2.6981" dependencies=tableauserverclient,tableauhyperapi
 ```
 
-
+### Configure XSOAR
 You can then configure the integration in XSOAR.
 
 <img src="imgs/integration.png" />
@@ -19,6 +23,8 @@ A Personal Access Token should then be created under the users account
 
 <img src="imgs/PAT.png" />
 
+
+### Setup Project and Sync Data
 You can then create a Project using XSOAR CLI.
 
 ```
